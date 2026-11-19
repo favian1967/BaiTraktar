@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 12+ system splash: ink field, the K tile, no branding strip. -->
+    <style name="Theme.BaiTraktar" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0A0B0A</item>
+        <item name="android:windowSplashScreenBackground">#0A0B0A</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#0A0B0A</item>
+    </style>
+</resources>

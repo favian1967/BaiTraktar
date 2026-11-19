@@ -1,0 +1,18 @@
+*.iml
+# .idea — настройки конкретной машины (эмулятор, JDK). Студия создаст их сама;
+# общий только стиль кода.
+/.idea/*
+!/.idea/codeStyles/
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Release signing — never commit
+/release.jks
+/keystore.properties
+.kotlin
