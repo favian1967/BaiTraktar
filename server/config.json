@@ -1,0 +1,26 @@
+{
+  "telegram": {"bot_token": "${TELEGRAM_BOT_TOKEN}"},
+  "llm": {
+    "provider": "anthropic",
+    "base_url": "https://api.wellflow.dev/v1",
+    "model": "claude-sonnet-5",
+    "api_key": "${LLM_API_KEY}",
+    "temperature": 0,
+    "timeout": 45,
+    "draft_timeout": 120,
+    "batch_size": 8,
+    "tokens_per_order": 260,
+    "max_tokens_cap": 8000,
+    "draft_max_tokens": 2000
+  },
+  "limits": {
+    "max_users": 50,
+    "user_judge_calls": 40,
+    "user_drafts": 10,
+    "total_judge_calls": 300,
+    "total_drafts": 60,
+    "orders_per_cycle": 16
+  },
+  "cycle_seconds": 60,
+  "api": {"host": "0.0.0.0", "port": 8080}
+}

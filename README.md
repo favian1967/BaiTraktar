@@ -36,11 +36,15 @@ Kwork ──► сборщик ленты ──► ИИ-оценка под п�
                       Telegram-бот          REST API (HTTPS) ──► это приложение
 ```
 
-- `data/` — сеть (Retrofit), настройки, `TokenVault` — шифрование ключа в Android Keystore
-- `ui/screens/` — экраны на Jetpack Compose
-- `ui/OrdersViewModel.kt` — состояние списка заказов
+## Что где лежит
 
-Серверная часть (бот, API, оценка) — в отдельном репозитории.
+| Папка | Что это |
+|---|---|
+| `app/` | Android-приложение (Kotlin, Jetpack Compose) |
+| `app/.../data/` | Сеть (Retrofit), настройки, `TokenVault` — шифрование ключа в Android Keystore |
+| `app/.../ui/screens/` | Экраны |
+| `server/` | Сервер: Telegram-бот, REST API, ИИ-оценка, база данных — подробно в [server/README.md](server/README.md) |
+| `server/collector/` | Сбор ленты заказов с Kwork |
 
 ## Релизная сборка
 

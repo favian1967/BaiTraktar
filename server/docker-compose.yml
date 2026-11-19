@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    image: kwork-app:1
+    container_name: kwork_app
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      APP_DB_PATH: /app/data/app.db
+      FEED_DB_PATH: /feed/feed.db
+    # Порт наружу не публикуется: edge-Caddy ходит сюда по имени контейнера
+    # (kwork.favian1967.site → kwork_app:8080) и сам держит TLS.
+    networks: [edge]
+    # На хосте 2 ГБ, соседей много: потолок, чтобы сбой здесь не утянул их.
+    mem_limit: 160m
+    volumes:
+      - ./config.json:/app/config.json:ro
+      - ./data:/app/data
+      # Каталог базы личного парсера — только чтение. Каталог, а не файл:
+      # SQLite смотрит на журнал рядом с базой, чтобы не прочитать её посреди записи.
+      - /srv/freelance_parser/data:/feed:ro
+
+networks:
+  edge:
+    external: true
